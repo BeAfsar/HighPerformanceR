@@ -17,8 +17,8 @@ for (comm_csv in comm_csv_list) {
 toc()
 
 library(tictoc)
-tic()
 library(doParallel)
+tic()
 registerDoParallel(cores = 3)
 foreach (comm_csv = comm_csv_list) %dopar% {
   comm <- read.csv2(comm_csv, header = T, row.names = 1)
